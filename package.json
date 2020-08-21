@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "start:net": "webpack-dev-server --open --mode development --host 192.168.1.104",
+    "start:net": "webpack-dev-server --open --mode development --host 192.168.0.17",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -24,7 +24,9 @@
   "homepage": "https://github.com/magnatronmaster/frontend-fantastic-event#readme",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
