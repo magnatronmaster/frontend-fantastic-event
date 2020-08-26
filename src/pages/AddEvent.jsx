@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FormAddEvent } from 'components/FormAddEvent';
+
 export const AddEvent = () => {
-  return <div>This is the Add Event Page</div>;
+  return <FormAddEvent />;
 };

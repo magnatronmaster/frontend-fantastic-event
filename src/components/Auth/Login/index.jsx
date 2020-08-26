@@ -1,18 +1,19 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+
 import {
-  LoginPageContainer,
+  Button,
+  LoginRegisterContainer,
   Contain,
-  FormLogin,
+  Form,
   LogoImage,
   TitleForm,
   LabelForm,
   InputForm,
   AnchorLink,
-  SendForm,
   LogoContainer,
-} from './styles';
+} from 'assets/GlobalStyles';
 
 import Logo from 'assets/images/logo.png';
 
@@ -21,22 +22,22 @@ export const Login = () => {
     e.preventDefault();
   };
   return (
-    <LoginPageContainer>
+    <LoginRegisterContainer>
       <Contain>
         <LogoContainer>
           <Link to="/">
             <LogoImage src={Logo} />
           </Link>
         </LogoContainer>
-        <FormLogin>
+        <Form>
           <TitleForm>Ingresar</TitleForm>
-          <LabelForm for="email">Correo Electronico</LabelForm>
+          <LabelForm htmlFor="email">Correo Electronico</LabelForm>
           <InputForm
             id="email"
             placeholder="Ingresa el nombre de usuario"
             name="email"
           />
-          <LabelForm for="password">Contraseña</LabelForm>
+          <LabelForm htmlFor="password">Contraseña</LabelForm>
           <InputForm
             id="password"
             placeholder="Ingresa la contraseña"
@@ -45,9 +46,9 @@ export const Login = () => {
           />
           <AnchorLink>¿Olvidó su contraseña?</AnchorLink>
           <AnchorLink to="/register">¿No tienes cuenta? Registrate</AnchorLink>
-          <SendForm onClick={handleClick}>Ingresar</SendForm>
-        </FormLogin>
+          <Button onClick={handleClick}>Ingresar</Button>
+        </Form>
       </Contain>
-    </LoginPageContainer>
+    </LoginRegisterContainer>
   );
 };
