@@ -31,7 +31,9 @@ export const EventsAsOrganizer = () => {
         </SubtitleEvents>
         <ContainerCards>
           {events.map((item) => {
-            return <CardButton name={item.name} key={item.id} />;
+            return (
+              <CardButton name={item.name} key={item.id} text="Ver evento" />
+            );
           })}
         </ContainerCards>
       </>

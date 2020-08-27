@@ -67,7 +67,8 @@ export const Button = styled.button`
 
 export const AnchorButton = styled(Link)`
   ${ButtonDesign}
-  text-align:center;
+  margin: ${(props) => props.margin || '1.5em auto;'};
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,13 +108,24 @@ export const LabelForm = styled.label`
 export const InputForm = styled.input`
   background: transparent;
   border-color: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: ${(props) => props.border || '1px'} solid black;
   width: 100%;
-  margin: 10px 0 40px;
+  margin: ${(props) => props.margin || '10px 0 40px'};
   :focus {
     outline: none;
   }
 `;
+
+export const InputTextArea = styled.textarea`
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid black;
+  width: 100%;
+  :focus {
+    outline: none;
+  }
+`;
+
 export const AnchorLink = styled(Link)`
   display: block;
   width: fit-content;
@@ -124,4 +136,38 @@ export const AnchorLink = styled(Link)`
 export const ContainerCards = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);
+`;
+
+//Modals
+export const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ModalContain = styled.div`
+  position: relative;
+  background-color: #ffffff;
+  padding: 1rem;
+  max-width: ${(props) => props.width || '400px;'};
+  border-radius: 10px;
+`;
+
+export const TitleModal = styled.h2`
+  margin-top: 0;
+`;
+
+export const CloseModal = styled.span`
+  display: block;
+  text-align: right;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: auto;
 `;

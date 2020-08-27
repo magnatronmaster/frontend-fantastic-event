@@ -10,17 +10,18 @@ const ContainerCard = styled.div`
   box-sizing: border-box;
   padding: 20px 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: fit-content;
 `;
 
 const Name = styled.h3`
   text-align: center;
 `;
 
-export const CardButton = ({ name, href }) => {
+export const CardButton = ({ name, href, text }) => {
   return (
     <ContainerCard>
       <Name>{name}</Name>
-      <AnchorButton to={href}>Ver Organización</AnchorButton>
+      <AnchorButton to={href}>{text}</AnchorButton>
     </ContainerCard>
   );
 };

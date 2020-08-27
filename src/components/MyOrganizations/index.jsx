@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { ContainerCards, AnchorButton } from 'assets/GlobalStyles';
+import { ContainerCards, Button } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
+
+import { CreateOrganization } from 'components/Modals/CreateOrganization';
 
 const SubtitleOrganizations = styled.h3`
   text-align: center;
@@ -18,6 +20,12 @@ export const MyOrganizations = () => {
       name: 'Platzi Master',
     },
   ]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = () => setIsOpen(true);
+  const handleCloseModal = () => setIsOpen(false);
+
   if (organizations.length >= 1) {
     return (
       <>
@@ -28,15 +36,22 @@ export const MyOrganizations = () => {
               <CardButton
                 name={item.name}
                 key={item.id}
+                text="Ver organización"
                 href="Acá va el link del button"
               />
             );
           })}
         </ContainerCards>
-        <AnchorButton>Crear organización</AnchorButton>
+        <Button onClick={handleOpenModal}>Crear organización</Button>
+        <CreateOrganization openModal={isOpen} closeModal={handleCloseModal} />
       </>
     );
   } else {
-    return <h3>You haven't organizations</h3>;
+    return (
+      <>
+        <h3>You haven't organizations</h3>
+        <Button>Crear organización</Button>
+      </>
+    );
   }
 };

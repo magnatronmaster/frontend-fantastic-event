@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CreateEvent } from 'components/Modals/CreateEvent';
+
 export const CreateMyEvents = () => {
-  return <h3>Crear nuevo evento</h3>;
+  return <CreateEvent />;
 };
