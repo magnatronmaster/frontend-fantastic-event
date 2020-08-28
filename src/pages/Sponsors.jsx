@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ContainerCards } from 'assets/GlobalStyles';
+import { ContainerCards, AnchorButton } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
 
-export const AddSponsors = () => {
+export const Sponsors = () => {
   const [sponsors, setSponsors] = useState([
     {
       id: '1',
@@ -31,9 +31,15 @@ export const AddSponsors = () => {
             );
           })}
         </ContainerCards>
+        <AnchorButton to="/addSponsor">Añadir sponsor</AnchorButton>
       </>
     );
   } else {
-    return <h3>You haven't events</h3>;
+    return (
+      <>
+        <h3>You haven't events</h3>
+        <AnchorButton to="/addSponsor">Añadir sponsor</AnchorButton>
+      </>
+    );
   }
 };

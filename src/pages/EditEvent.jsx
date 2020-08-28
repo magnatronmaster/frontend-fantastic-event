@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { FormAddEvent } from 'components/FormAddEvent';
+import { FormEditEvent } from 'components/FormEditEvent';
 
 export const EditEvent = () => {
-  return <FormAddEvent />;
+  return <FormEditEvent />;
 };

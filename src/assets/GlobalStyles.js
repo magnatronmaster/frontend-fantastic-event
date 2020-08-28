@@ -61,24 +61,7 @@ const ButtonDesign = (props) => `
   }
 `;
 
-export const Button = styled.button`
-  ${ButtonDesign}
-`;
-
-export const AnchorButton = styled(Link)`
-  ${ButtonDesign}
-  margin: ${(props) => props.margin || '1.5em auto;'};
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const LoginRegisterContainer = styled.section`
-  grid-row: 1/4;
-  display: flex;
-`;
-
+//Components for logo (figure and image)
 export const LogoContainer = styled.figure`
   width: fit-content;
   margin: auto;
@@ -88,6 +71,27 @@ export const LogoImage = styled.img`
   max-width: 200px;
   height: auto;
 `;
+
+// globals buttons for any component
+export const Button = styled.button`
+  ${ButtonDesign}
+`;
+
+export const AnchorButton = styled(Link)`
+  ${ButtonDesign}
+  margin: ${(props) => props.margin || '1.5em auto;'};
+  width: ${(props) => props.width || '60%;'};
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+// global components for forms (inputs, containers, etc.)
+export const LoginRegisterContainer = styled.section`
+  grid-row: 1/4;
+  display: flex;
+`; // This is for the login and register pages
 
 export const Contain = styled.div`
   max-width: 440px;
@@ -133,6 +137,7 @@ export const AnchorLink = styled(Link)`
   color: var(--dark-color);
 `;
 
+// Container cards for This is for the login and register pages
 export const ContainerCards = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
+import { FaTimes } from 'react-icons/fa';
+
 import {
   InputForm,
   LabelForm,
@@ -22,7 +24,9 @@ export const CreateEvent = ({ isOpen, isClose }) => {
   return ReactDOM.createPortal(
     <ModalContainer>
       <ModalContain width="80%">
-        <CloseModal onClick={isClose}>X</CloseModal>
+        <CloseModal>
+          <FaTimes onClick={isClose} />
+        </CloseModal>
         <Contain>
           <FormCreateEvent>
             <TitleModal>¡Danos detalles del evento!</TitleModal>
