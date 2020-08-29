@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap');
     body {
         background-color: var(--background-white);
         margin: 0;
@@ -41,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: auto;
         min-height: 100vh;
         display: grid;
-        grid-template-rows: 100px 1fr 80px;
+        grid-template-rows: 100px 1fr auto;
     }
     `;
 

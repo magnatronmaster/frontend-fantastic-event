@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/magnatronmaster/frontend-fantastic-event#readme",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",

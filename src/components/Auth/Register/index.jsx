@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -18,8 +18,27 @@ import {
 import Logo from 'assets/images/logo.png';
 
 export const Register = () => {
-  const handleClick = (e) => {
+  const [form, setValues] = useState({});
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(form);
+    await fetch('https://event-app-72617.uc.r.appspot.com/api/users', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(form),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => console.log(response))
+      .catch((error) => console.error(error));
+  };
+  const handleInput = (e) => {
+    setValues({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
   return (
     <LoginRegisterContainer>
@@ -29,20 +48,22 @@ export const Register = () => {
             <LogoImage src={Logo} />
           </Link>
         </LogoContainer>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <TitleForm>Registrarse</TitleForm>
-          <LabelForm htmlFor="email">Correo Electronico</LabelForm>
+          <LabelForm htmlFor="email_user">Correo Electronico</LabelForm>
           <InputForm
+            onChange={handleInput}
             id="email"
             placeholder="Ingresa el correo electronico"
-            name="email"
+            name="email_user"
             type="email"
           />
-          <LabelForm htmlFor="password">Contraseña</LabelForm>
+          <LabelForm htmlFor="password_user">Contraseña</LabelForm>
           <InputForm
-            id="password"
+            onChange={handleInput}
+            id="password_user"
             placeholder="Ingresa la contraseña"
-            name="password"
+            name="password_user"
             type="password"
           />
           <LabelForm htmlFor="confirmPassword">Confirmar Contraseña</LabelForm>
@@ -52,7 +73,7 @@ export const Register = () => {
             name="confirmPassword"
           />
           <AnchorLink to="/login">¿Eres miembro? Ingresa aquí</AnchorLink>
-          <Button onClick={handleClick}>Registrarse</Button>
+          <Button>Registrarse</Button>
         </Form>
       </Contain>
     </LoginRegisterContainer>
