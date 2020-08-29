@@ -10,16 +10,7 @@ const SubtitleOrganizations = styled.h3`
 `;
 
 export const MyOrganizations = () => {
-  const [organizations, setOrganizations] = useState([
-    {
-      id: '1',
-      name: 'magnatron',
-    },
-    {
-      id: '2',
-      name: 'Platzi Master',
-    },
-  ]);
+  const [organizations, setOrganizations] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,7 +41,8 @@ export const MyOrganizations = () => {
     return (
       <>
         <h3>You haven't organizations</h3>
-        <Button>Crear organización</Button>
+        <Button onClick={handleOpenModal}>Crear organización</Button>
+        <CreateOrganization openModal={isOpen} closeModal={handleCloseModal} />
       </>
     );
   }

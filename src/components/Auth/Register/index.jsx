@@ -23,7 +23,7 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-    await fetch('https://event-app-72617.uc.r.appspot.com/api/users', {
+    await fetch('https://fantastic-event.herokuapp.com/api/users', {
       method: 'POST',
       mode: 'no-cors',
       body: JSON.stringify(form),
