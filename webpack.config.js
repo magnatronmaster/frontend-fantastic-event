@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 // Creamos un nuevo modulo que vamos a exportar con esta configuracion
 // Vamos a configurar cada unos de los elementos que necesitamos
 
@@ -74,5 +75,6 @@ module.exports = {
       filename: 'assets/[name].css',
       //Ruta donde se ubicará en el resultante del css
     }),
+    new Dotenv(),
   ],
 };

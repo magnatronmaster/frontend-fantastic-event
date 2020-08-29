@@ -42,6 +42,9 @@ export const GlobalStyles = createGlobalStyle`
         display: grid;
         grid-template-rows: 100px 1fr auto;
     }
+    .swal-icon img {
+      max-width:100px;
+    }
     `;
 
 const ButtonDesign = (props) => `
