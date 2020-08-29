@@ -3,6 +3,7 @@ import { ContainerCards, AnchorButton } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
 
 export const Sponsors = () => {
+  const cualquiera = 'angel';
   const [sponsors, setSponsors] = useState([
     {
       id: '1',
@@ -31,14 +32,18 @@ export const Sponsors = () => {
             );
           })}
         </ContainerCards>
-        <AnchorButton to="/addSponsor">Añadir sponsor</AnchorButton>
+        <AnchorButton to={`/addSponsor/${cualquiera}`}>
+          Añadir sponsor
+        </AnchorButton>
       </>
     );
   } else {
     return (
       <>
         <h3>You haven't events</h3>
-        <AnchorButton to="/addSponsor">Añadir sponsor</AnchorButton>
+        <AnchorButton to={`/addSponsor/${cualquiera}`}>
+          Añadir sponsor
+        </AnchorButton>
       </>
     );
   }

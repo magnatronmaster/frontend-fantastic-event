@@ -34,10 +34,11 @@ const App = () => (
         <Route exact path="/lecturers" component={Lecturers} />
         <Route exact path="/addLecturer" component={AddLecturer} />
         <Route exact path="/addConference" component={AddConference} />
-        <Route exact path="/addSponsor" component={AddSponsor} />
+        <Route exact path="/addSponsor/:type" component={AddSponsor} />
       </Layout>
     </Switch>
   </BrowserRouter>
 );
 
 export default App;
+<AddSponsor />;
