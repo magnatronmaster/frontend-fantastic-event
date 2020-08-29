@@ -18,6 +18,7 @@ import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
 
+
 const App = () => (
   <BrowserRouter>
     <GlobalStyles />
