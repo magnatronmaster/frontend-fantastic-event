@@ -3,12 +3,12 @@ import {Logo, Nav, ContainerHeder} from "./styles"
 
 
 
-export const Header = ({logoEvento}) => {
+export const Header = ({logoEvent}) => {
     return (
         <ContainerHeder> 
 
             <Logo>
-                <a href="#"><img src={logoEvento} alt="logo"/></a>
+                <a href="#"><img src={logoEvent} alt="logo"/></a>
             </Logo>
 
             <Nav>

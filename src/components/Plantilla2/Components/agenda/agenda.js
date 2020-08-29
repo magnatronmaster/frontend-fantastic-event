@@ -9,28 +9,28 @@ import {
   TablaEventoPlantilla
 } from "./styles";
 
-export const Agenda = () => {
+export const Agenda = ({dateEvent, conference}) => {
   return (
     <AgendaPlantilla>
       <h2>Agenda</h2>
 
       <ContenedorTablaPlantilla>
         <FechaPlantilla>
-          <PrimerDia>first-day</PrimerDia>
-          <SegundoDia>second-day</SegundoDia>
+          <PrimerDia>{dateEvent || "first-day"}</PrimerDia>
+          <SegundoDia>{dateEvent || "second-day"}</SegundoDia>
         </FechaPlantilla>
         <h3>Workshops day</h3>
         <div>
           <TablaEventoPlantilla>
             <tbody>
-            {[1, 2, 3, 5, 6].map((event) => {
+            {[1, 2, 3, 5, 6].map((conferenceItem) => {
               return (
                 <tr key = {event}>
-                  <td>9:30 am - 11:30 am</td>
+                  <td>{conferenceItem || "9:30 am - 11:30 am"}</td>
                   <td>
-                    Primera actividad
+                    {conferenceItem || "Primera actividad"}
                     <br />
-                    <strong> Conferencista1</strong>
+                    <strong>{conferenceItem.speaker || "Conferencista1"} </strong>
                   </td>
                 </tr>
               );

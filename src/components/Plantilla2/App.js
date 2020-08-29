@@ -23,11 +23,11 @@ export function Plantilla({nameEvent, direction, dateEvent, imageEvent, logoEven
     <div>
       <GlobalStyle />
 
-      <Header logoEvento={Imglog} />
-      <Banner />
+      <Header logoEvento={logoEvent || Imglog } />
+      <Banner nameEvent ="" dateEvent ="" />
       <Chronometer fecha= {dateEvent || USER_DATE} />
-      <InfoEvent />
-      <Agenda />
+      <InfoEvent nameEvent ="" eventDescription ="" imageEvent ="" />
+      <Agenda dateEvent="" conference=""/>
       <Speaker2 />
       <Register />
       <Collaborators logoSponsor={Logspo} />
