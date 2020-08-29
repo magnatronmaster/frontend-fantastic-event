@@ -14,6 +14,8 @@ import { AddLecturers } from '../pages/AddLecturers';
 import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
+ 
+import {Plantilla} from '../components/Plantilla2/App'
 
 const App = () => (
   <BrowserRouter>
@@ -34,4 +36,4 @@ const App = () => (
   </BrowserRouter>
 );
 
-export default App;
+export default Plantilla;

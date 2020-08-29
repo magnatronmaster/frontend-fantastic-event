@@ -20,11 +20,12 @@ export const Agenda = () => {
           <SegundoDia>second-day</SegundoDia>
         </FechaPlantilla>
         <h3>Workshops day</h3>
-        <div class="tabla">
+        <div>
           <TablaEventoPlantilla>
-            {[1, 2, 3, 5, 6].map(() => {
+            <tbody>
+            {[1, 2, 3, 5, 6].map((event) => {
               return (
-                <tr>
+                <tr key = {event}>
                   <td>9:30 am - 11:30 am</td>
                   <td>
                     Primera actividad
@@ -34,6 +35,7 @@ export const Agenda = () => {
                 </tr>
               );
             })}
+            </tbody>
           </TablaEventoPlantilla>
         </div>
       </ContenedorTablaPlantilla>

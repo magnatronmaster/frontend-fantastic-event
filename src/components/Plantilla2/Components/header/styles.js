@@ -21,6 +21,7 @@ export const ContainerHeder = styled.section`
      right: 0;
      top: 0;
      bottom: 0;
+     text-align:center;
      
      padding: 10px 0;
      height: 140px;
