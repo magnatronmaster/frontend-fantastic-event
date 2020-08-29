@@ -7,10 +7,8 @@ export const Number = styled.p`
     font-size: 25px;
     line-height: 36px;
     text-align: center;
-    color: transparent;
-	background: linear-gradient(180deg, #0ABCD5 29.17%, #0B1111 100%), #FFFFFF;
-    -webkit-background-clip: text;
-    margin: 0;
+    color: #18028E;
+	
 `
 
 export const Day = styled.p`
@@ -20,13 +18,13 @@ export const Day = styled.p`
     font-size: 10px;
     line-height: 14px;
     text-align: center;
-    color: #38E6FE;    
+    color: #18028E;    
 `
 
 export const ContainerCountdown = styled.div`
     width: 45px;
     height: 60px;
-    background: #0B1111;
+    background: #901998;
     box-shadow: 0px 0px 6px #0ABCD5;        
 `
 

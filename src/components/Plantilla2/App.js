@@ -8,7 +8,7 @@ import { Banner } from './Components/banner/banner';
 import { Register } from './Components/register/register';
 import { Contact1 } from './Components/contacto/contact';
 import { Collaborators } from './Components/Sponsors/sponsors';
-import Logspo from './assets/logo-sp.svg';
+
 import { GlobalStyle } from './globalComponents';
 import { InfoEvent } from './Components/info/Info';
 import { Agenda } from './Components/agenda/agenda';
@@ -18,20 +18,20 @@ import { Speaker2 } from './Components/speakers/Speaker';
 
 const USER_DATE = "Fri sep 28 2020 22:07:47 GMT-0500"
 
-export function Plantilla({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker}) {
+export function Plantilla({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker, sponsor}) {
   return (
     <div>
       <GlobalStyle />
 
       <Header logoEvento={logoEvent || Imglog } />
-      <Banner nameEvent ="" dateEvent ="" />
+      <Banner nameEvent ={nameEvent} dateEvent ={dateEvent} />
       <Chronometer fecha= {dateEvent || USER_DATE} />
-      <InfoEvent nameEvent ="" eventDescription ="" imageEvent ="" />
-      <Agenda dateEvent="" conference=""/>
-      <Speaker2 />
+      <InfoEvent nameEvent ={nameEvent} eventDescription ={eventDescription} imageEvent ={imageEvent} />
+      <Agenda dateEvent={dateEvent} conference={conference}/>
+      <Speaker2 speaker ={speaker} />
       <Register />
-      <Collaborators logoSponsor={Logspo} />
-      <Contact1 />
+      <Collaborators sponsor={sponsor} />
+      <Contact1 dateEvent ={dateEvent} direction ={direction} />
     </div>
   );
 }

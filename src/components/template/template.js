@@ -58,7 +58,7 @@ const DATE_EVENT = "sep 1, 2020 00:00:00";
 
 const DIRECTION = "calle 12 No. 15-19"
 
-export const Template = ({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker}) => {
+export const Template = ({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker, sponsor}) => {
  
   
   return (

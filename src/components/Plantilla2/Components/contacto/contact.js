@@ -3,7 +3,7 @@ import {Contact, ContainerContact, MainContact, WidgetContainer, WidgetContact, 
 
 
 
-export const Contact1 = () => {
+export const Contact1 = ({dateEvent, direction}) => {
     return (
         <Contact>
             <ContainerContact>
@@ -13,20 +13,20 @@ export const Contact1 = () => {
                 </MainContact>
                 <WidgetContainer>
                 
-                    <WidgetContact>
+                    {/* <WidgetContact>
                         <h3>Contacto</h3>
                         <p>info@misitio.com</p>
                         <p>3103103103</p>
-                    </WidgetContact>
+                    </WidgetContact> */}
                     <WidgetDate>
                         <h3>Cúando</h3>
-                        <p>30 octubre 2020</p>
-                        <p>19:30 - 22:30</p>
+                        <p>{dateEvent || "30 octubre 2020"}</p>
+                        {/* <p>19:30 - 22:30</p> */}
                     </WidgetDate>
                     <WidgetPlace>
                         <h3>Dónde</h3>
-                        <p>Parque Metropolitano</p>
-                        <p>Bogotá - Colombia</p>
+                        <p>{direction || "Parque Metropolitano"}</p>
+                        {/* <p>Bogotá - Colombia</p> */}
                     </WidgetPlace>
                 </WidgetContainer>
             </ContainerContact>
