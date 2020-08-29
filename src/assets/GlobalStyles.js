@@ -67,7 +67,7 @@ export const LogoContainer = styled.figure`
 `;
 
 export const LogoImage = styled.img`
-  max-width: 200px;
+  max-width: ${(props) => props.maxWidth || '200px'};
   height: auto;
 `;
 

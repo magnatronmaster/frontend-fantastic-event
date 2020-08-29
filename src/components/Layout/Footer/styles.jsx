@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   background-color: var(--primary-color);
   border-radius: 10px 10px 0 0;
+  padding-top: 20px;
 `;
 
 export const FooterText = styled.h3`
