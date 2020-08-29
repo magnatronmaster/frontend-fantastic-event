@@ -42,6 +42,9 @@ export const GlobalStyles = createGlobalStyle`
         display: grid;
         grid-template-rows: 100px 1fr auto;
     }
+    .swal-icon img {
+      max-width:100px;
+    }
     `;
 
 const ButtonDesign = (props) => `
@@ -67,7 +70,7 @@ export const LogoContainer = styled.figure`
 `;
 
 export const LogoImage = styled.img`
-  max-width: 200px;
+  max-width: ${(props) => props.maxWidth || '200px'};
   height: auto;
 `;
 

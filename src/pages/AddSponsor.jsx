@@ -9,7 +9,8 @@ import {
   Form,
 } from 'assets/GlobalStyles';
 
-export const AddSponsor = () => {
+export const AddSponsor = (props) => {
+  console.log(props.match.params);
   return (
     <Contain>
       <TitleModal>Agrega un sponsor</TitleModal>
