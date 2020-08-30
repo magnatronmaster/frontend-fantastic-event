@@ -20,46 +20,56 @@ import Loader from 'assets/images/loader.gif';
 
 export const Register = () => {
   const [form, setValues] = useState();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(form);
+
     swal({
       title: 'Estamos validando tus datos',
       icon: Loader,
       button: false,
     });
-    await fetch(`${process.env.URL_API}auth/sign-up/`, {
-      mode: 'cors',
-      method: 'POST',
-      body: JSON.stringify(form),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.message === 'user created') {
-          swal({
-            title: 'Te has registrado correctamente',
-            text: 'Tus datos se han almacenado',
-            icon: 'success',
-            button: false,
-          });
-
-          setTimeout(() => {
-            location.href = '/login';
-          }, 2000);
-        } else if (data.message === 'email_user already exists') {
-          swal({
-            title: 'El correo electronico ya está registrado',
-            text: 'Intenta nuevamente con un correo electronico diferente',
-            icon: 'warning',
-            button: '¡OK!',
-          });
-        }
+    if (form.password_user !== form.confirmPassword) {
+      swal({
+        title: 'Las contraseñas no coinciden',
+        icon: 'warning',
+        button: 'Cerrar',
+      });
+    } else {
+      setValues(delete form.confirmPassword);
+      await fetch(`${process.env.URL_API}auth/sign-up/`, {
+        mode: 'cors',
+        method: 'POST',
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
-      .catch((error) => console.error(error));
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data.message === 'user created') {
+            swal({
+              title: 'Te has registrado correctamente',
+              text: 'Tus datos se han almacenado',
+              icon: 'success',
+              button: false,
+            });
+
+            setTimeout(() => {
+              location.href = '/login';
+            }, 2000);
+          } else if (data.message === 'email_user already exists') {
+            swal({
+              title: 'El correo electronico ya está registrado',
+              text: 'Intenta nuevamente con un correo electronico diferente',
+              icon: 'warning',
+              button: '¡OK!',
+            });
+          }
+        })
+        .catch((error) => console.error(error));
+    }
   };
   const handleInput = (e) => {
     setValues({
@@ -98,8 +108,10 @@ export const Register = () => {
           <LabelForm htmlFor="confirmPassword">Confirmar Contraseña</LabelForm>
           <InputForm
             id="confirmPassword"
+            onChange={handleInput}
             placeholder="Ingresa nuevamente la contraseña"
             name="confirmPassword"
+            type="password"
             required
           />
           <AnchorLink to="/login">¿Eres miembro? Ingresa aquí</AnchorLink>
