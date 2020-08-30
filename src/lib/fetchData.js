@@ -8,7 +8,7 @@ const fetchData = async (url, requestOptions) => {
   if (!url) return;
   try {
     const response = await fetch(url, requestOptions);
-    if (response.status === 201) {
+    if (response.ok) {
       const data = await response.json();
       return data;
     } else {
