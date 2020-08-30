@@ -41,7 +41,7 @@ export const RegisterTop = styled.div`
         
     }
 `
-export const Registro = styled.div`
+export const UserRegister = styled.div`
     width: 200px;
     height: 80px;
     border-radius: 7px;
@@ -52,6 +52,7 @@ export const Registro = styled.div`
     background-color: #13018D;
     margin: auto;
     padding-top: 30px;
+    text-align: center;
 `
 
 export const RegisterBottom = styled.div`

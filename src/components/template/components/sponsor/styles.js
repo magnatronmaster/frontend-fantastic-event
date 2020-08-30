@@ -10,6 +10,7 @@ export const SponsorContainer = styled.div`
     background: black;
     padding:20px;
     margin:20px;
+    text-align:center;
 `
 
 export const SponsorName = styled.div`

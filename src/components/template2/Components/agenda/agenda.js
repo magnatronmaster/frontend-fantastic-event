@@ -25,7 +25,7 @@ export const Agenda = ({dateEvent, conference}) => {
             <tbody>
             {[1, 2, 3, 5, 6].map((conferenceItem) => {
               return (
-                <tr key = {event}>
+                <tr key = {conferenceItem}>
                   <td>{conferenceItem.time || "9:30 am - 11:30 am"}</td>
                   <td>
                     {conferenceItem.name || "Primera actividad"}

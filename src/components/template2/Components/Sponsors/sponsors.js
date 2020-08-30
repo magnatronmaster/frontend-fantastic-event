@@ -10,7 +10,7 @@ export const Collaborators = ({sponsor}) => {
                 <ContainerSponsors>
                     {[1,2,3,4,5,6,7,8,9,10].map((sponsorItem) => {
                         return (
-                            <TargetSponsor>
+                            <TargetSponsor key = {sponsorItem}>
                                 <img src={sponsorItem.logo || Logspo} alt="" />
                                 <p>{sponsorItem.name || "Nombre"}</p>
                             </TargetSponsor>
