@@ -15,13 +15,15 @@ import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
  
-import {Plantilla} from '../components/template2/App'
+import {LightTemplate} from '../components/template2/App'
 
-const App = () => (
+import {DarkTemplate} from '../components/template/Template'
+
+const App = () => ( 
   <BrowserRouter>
     <GlobalStyles />
     <Switch>
-      <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       <Layout>
         <Route exact path="/" component={Home} />

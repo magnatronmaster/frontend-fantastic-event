@@ -18,7 +18,7 @@ import { Speaker2 } from './Components/speakers/Speaker';
 
 const USER_DATE = "Fri sep 28 2020 22:07:47 GMT-0500"
 
-export function Plantilla({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker, sponsor}) {
+export function LightTemplate({nameEvent, direction, dateEvent, imageEvent, logoEvent, eventDescription, conference, speaker, sponsor}) {
   return (
     <div>
       <GlobalStyle />
