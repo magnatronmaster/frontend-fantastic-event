@@ -48,7 +48,17 @@ export const Login = () => {
     };
 
     await fetch(`${process.env.URL_API}auth/sign-in/`, requestOptions)
-      .then((response) => response.json())
+      .then((response) => {
+        let data = response.json();
+        if (response.status === 401) {
+          swal({
+            title: 'Verifica que tu email o contraseña estén correctos',
+            icon: 'error',
+            button: '¡OK!',
+          });
+        }
+        return data;
+      })
       .then((data) => {
         console.log(data);
         if (data.token !== undefined) {
@@ -68,17 +78,6 @@ export const Login = () => {
         }
       })
       .catch((error) => console.error('error', error));
-
-    //   await fetch(`${process.env.URL_API}/auth/sign-in/`, {
-    //     headers: new Headers({
-    //       Authorization: `Basic ${base64.encode(
-    //         `${form.email_user}:${form.password_user}`
-    //       )}`,
-    //     }),
-    //   })
-    //     .then((response) => response.json())
-    //     .then((data) => console.log(data))
-    //     .catch((error) => console.error(error));
   };
 
   return (
