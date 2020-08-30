@@ -4,6 +4,7 @@ export const FooterContainer = styled.footer`
   background-color: var(--primary-color);
   border-radius: 10px 10px 0 0;
   padding-top: 20px;
+  margin-top: 40px;
 `;
 
 export const FooterText = styled.h3`

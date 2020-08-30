@@ -21,9 +21,7 @@ export const Header = () => {
     if (id_user !== undefined) {
       return (
         <>
-          <HeaderMenuItem>
-            Bievenido{window.localStorage.email_user}
-          </HeaderMenuItem>
+          <HeaderMenuItem>Bievenido</HeaderMenuItem>
           <HeaderMenuItem>
             <HeaderMenuLink onClick={handleSignOut}>
               Cerrar sesión

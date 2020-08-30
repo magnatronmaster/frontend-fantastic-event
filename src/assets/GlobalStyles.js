@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
+import {device} from './Breakpoints';
+
 export const GlobalStyles = createGlobalStyle`
     body {
         background-color: var(--background-white);
@@ -141,8 +143,12 @@ export const AnchorLink = styled(Link)`
 
 // Container cards for This is for the login and register pages
 export const ContainerCards = styled.div`
+  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);
+  @media ${device.tablet} {
+    grid-template-columns: repeat(1, 1fr);    
+  }
 `;
 
 //Modals
