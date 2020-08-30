@@ -8,22 +8,8 @@ const SubtitleEvents = styled.h3`
   text-align: center;
 `;
 
-export const EventsAsOrganizer = () => {
-  const [events, setEvents] = useState([
-    {
-      id: '1',
-      name: 'magnatron Event',
-    },
-    {
-      id: '2',
-      name: 'Nelson Master Event',
-    },
-    {
-      id: '3',
-      name: 'Cohort 3 Event',
-    },
-  ]);
-  if (events.length >= 1) {
+export const EventsAsOrganizer = ({ data }) => {
+  if (data.length >= 1) {
     return (
       <>
         <SubtitleEvents>

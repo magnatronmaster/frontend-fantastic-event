@@ -10,22 +10,7 @@ const SubtitleOrganizations = styled.h3`
   text-align: center;
 `;
 
-export const MyOrganizations = () => {
-  const [organizations, setOrganizations] = useState([{
-    name: "nelson",
-    id:"1"
-  },
-
-  {
-    name: "jaime",
-    id:"2"
-  },
-  {
-    name: "angel",
-    id:"3"
-  }
-]);
-
+export const MyOrganizations = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => setIsOpen(true);
