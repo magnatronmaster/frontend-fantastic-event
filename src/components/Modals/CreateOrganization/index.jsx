@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import swal from 'sweetalert';
+import fetchData from '../../../lib/fetchData';
+import {} from 'react-router';
 
 import { FaTimes } from 'react-icons/fa';
 
@@ -29,7 +31,7 @@ export const CreateOrganization = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+
     const requestOptions = {
       method: 'POST',
       mode: 'cors',
@@ -38,32 +40,26 @@ export const CreateOrganization = (props) => {
         'Content-Type': 'application/json',
       },
     };
-    await fetch(`${process.env.URL_API}organization/`, requestOptions)
-      .then((response) => {
-        const data = response.json();
-        if (response.status == !201) {
-          swal({
-            title: 'Ha ocurrido un error creando la organización',
-            text: 'Intentalo nuevamente',
-            icon: 'warning',
-            button: '¡OK!',
-          });
-        } else {
-          swal({
-            title: 'Se ha creado la organización correctamente',
-            icon: 'success',
-            button: false,
-          });
-          setTimeout(() => {
-            location.href = '/adminDashboard';
-          }, 2000);
-        }
-        return data;
-      })
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem('id_org', data.data.idOrg);
+    const url = `${process.env.URL_API}organization/`;
+
+    try {
+      const data = await fetchData(url, requestOptions);
+      swal({
+        title: 'Se ha creado la organización correctamente',
+        icon: 'success',
+        button: false,
       });
+      setTimeout(() => {
+        location.href = `/${data.data.idOrg}`;
+      }, 2000);
+    } catch (error) {
+      swal({
+        title: 'Ha ocurrido un error creando la organización',
+        text: `${error}, intentalo nuevamente`,
+        icon: 'warning',
+        button: '¡OK!',
+      });
+    }
   };
 
   if (!props.openModal) {
@@ -87,7 +83,6 @@ export const CreateOrganization = (props) => {
             name="name_org"
             placeholder="Escribe el nombre de la organización"
             type="text"
-            required
           />
           <LabelForm htmlFor="organization-name">
             ¿De que trata la organización?
@@ -98,7 +93,6 @@ export const CreateOrganization = (props) => {
             name="description_org"
             placeholder="Describe brevemente la organización"
             margin="10px 0 0"
-            required
           />
           <Button type="submit">Crear organización</Button>
         </form>
