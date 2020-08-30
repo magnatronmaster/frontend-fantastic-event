@@ -34,8 +34,8 @@ const App = () => (
     <Switch>
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/" component={Home} />
       <Layout>
-        <Route exact path="/" component={Home} />
         <SecureRoutes exact path="/dashboard" component={MainDashboard} />
         <SecureRoutes exact path="/adminDashboard" component={AdminDashboard} />
         <SecureRoutes exact path="/editEvent" component={EditEvent} />
