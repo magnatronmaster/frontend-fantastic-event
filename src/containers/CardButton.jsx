@@ -12,11 +12,8 @@ const ContainerCard = styled.div`
   box-sizing: border-box;
   padding: 20px 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: fit-content;
-  
-  @media ${device.tablet} {
-    margin: 20px 0;
-  }
+  height: fit-content;   
+  margin: 20px 0;  
 `;
 
 const Name = styled.h3`

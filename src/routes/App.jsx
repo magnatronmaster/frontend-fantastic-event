@@ -20,6 +20,7 @@ import { Register } from '../components/Auth/Register';
 
 
 
+
 const App = () => (
   <BrowserRouter>
     <GlobalStyles />

@@ -19,7 +19,7 @@ import { Contain, FormCreateEvent, ContainerTemplateImg } from './styles';
 import imageTemplate from 'assets/images/plantilla.png';
 
 export const CreateEvent = ({ isOpen, isClose }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return null;  
 
   return ReactDOM.createPortal(
     <ModalContainer>
