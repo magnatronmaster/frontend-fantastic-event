@@ -44,14 +44,10 @@ const App = () => {
       <Switch>
         <UserLogged exact path="/login" component={Login} />
         <UserLogged exact path="/register" component={Register} />
-        <UserLogged exact path="/" component={Home} />
+        <SecureRoutes exact path="/" component={Home} />
         <Layout>
           <SecureRoutes exact path="/dashboard" component={MainDashboard} />
-          <SecureRoutes
-            exact
-            path="/:id_org"
-            component={AdminDashboard}
-          />
+          <SecureRoutes exact path="/:id_org" component={AdminDashboard} />
           <SecureRoutes exact path="/editEvent" component={EditEvent} />
           <SecureRoutes exact path="/sponsors" component={Sponsors} />
           <SecureRoutes exact path="/conferences" component={Conferences} />
