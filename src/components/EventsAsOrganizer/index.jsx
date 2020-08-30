@@ -9,8 +9,6 @@ const SubtitleEvents = styled.h3`
 `;
 
 export const EventsAsOrganizer = ({ data }) => {
-  data.map((item) => console.log(item));
-
   if (data.length >= 1) {
     return (
       <>

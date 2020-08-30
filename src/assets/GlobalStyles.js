@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
+import {device} from './Breakpoints';
+
 export const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap');
     
@@ -143,8 +145,12 @@ export const AnchorLink = styled(Link)`
 
 // Container cards for This is for the login and register pages
 export const ContainerCards = styled.div`
+  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);
+  @media ${device.tablet} {
+    grid-template-columns: repeat(1, 1fr);    
+  }
 `;
 
 //Modals
