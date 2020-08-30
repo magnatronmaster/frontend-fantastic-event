@@ -19,6 +19,8 @@ import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
 
 
+
+
 const App = () => (
   <BrowserRouter>
     <GlobalStyles />
@@ -35,7 +37,7 @@ const App = () => (
         <Route exact path="/lecturers" component={Lecturers} />
         <Route exact path="/addLecturer" component={AddLecturer} />
         <Route exact path="/addConference" component={AddConference} />
-        <Route exact path="/addSponsor/:type" component={AddSponsor} />
+        <Route exact path="/addSponsor" component={AddSponsor} />
       </Layout>
     </Switch>
   </BrowserRouter>
