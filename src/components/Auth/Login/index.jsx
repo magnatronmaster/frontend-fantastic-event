@@ -49,8 +49,25 @@ export const Login = () => {
 
     await fetch(`${process.env.URL_API}auth/sign-in/`, requestOptions)
       .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) => console.log('error', error));
+      .then((data) => {
+        console.log(data);
+        if (data.token !== undefined) {
+          swal({
+            title: 'Te has logueado correctamente',
+            icon: 'success',
+            button: false,
+          });
+
+          localStorage.setItem('token_user', data.token);
+          localStorage.setItem('id_user', data.user.id_user);
+          localStorage.setItem('email_user', data.user.email_user);
+
+          setTimeout(() => {
+            location.href = '/dashboard';
+          }, 2000);
+        }
+      })
+      .catch((error) => console.error('error', error));
 
     //   await fetch(`${process.env.URL_API}/auth/sign-in/`, {
     //     headers: new Headers({
