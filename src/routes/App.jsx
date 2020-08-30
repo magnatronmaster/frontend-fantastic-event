@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import { GlobalStyles } from '../assets/GlobalStyles';
 
@@ -20,13 +20,13 @@ import { Register } from '../components/Auth/Register';
 
 
 
-
 const App = () => (
   <BrowserRouter>
     <GlobalStyles />
     <Switch>
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/" component={Home} />
       <Layout>
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={MainDashboard} />
