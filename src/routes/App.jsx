@@ -21,7 +21,9 @@ import { Register } from '../components/Auth/Register';
 const App = () => {
   const token = localStorage.token_user;
   const username = localStorage.id_user;
+
   function SecureRoutes({ component, path, ...restElements }) {
+    // return <Route path={path} component={component} {...restElements} />;
     if (token && username) {
       return <Route path={path} component={component} {...restElements} />;
     } else {
@@ -47,7 +49,7 @@ const App = () => {
           <SecureRoutes exact path="/dashboard" component={MainDashboard} />
           <SecureRoutes
             exact
-            path="/adminDashboard"
+            path="/:id_org"
             component={AdminDashboard}
           />
           <SecureRoutes exact path="/editEvent" component={EditEvent} />
