@@ -10,6 +10,5 @@ import { HeaderHome } from 'components/HeaderHome/HeaderHome'
 export const Home = () => {
   return (    
      <HeaderHome/>
-      
-  );
+       );
 };

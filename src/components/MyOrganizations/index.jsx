@@ -10,7 +10,20 @@ const SubtitleOrganizations = styled.h3`
 `;
 
 export const MyOrganizations = () => {
-  const [organizations, setOrganizations] = useState([]);
+  const [organizations, setOrganizations] = useState([{
+    name: "nelson",
+    id:"1"
+  },
+
+  {
+    name: "jaime",
+    id:"2"
+  },
+  {
+    name: "angel",
+    id:"3"
+  }
+]);
 
   const [isOpen, setIsOpen] = useState(false);
 

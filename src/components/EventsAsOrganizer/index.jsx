@@ -16,7 +16,7 @@ export const EventsAsOrganizer = () => {
     },
     {
       id: '2',
-      name: 'Platzi Master Event',
+      name: 'Nelson Master Event',
     },
     {
       id: '3',
