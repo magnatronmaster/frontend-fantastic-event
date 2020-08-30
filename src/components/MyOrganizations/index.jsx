@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import useInitialState from 'hooks/useInitialState';
+
 import { ContainerCards, Button } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
 
@@ -11,6 +13,12 @@ const SubtitleOrganizations = styled.h3`
 
 export const MyOrganizations = () => {
   const [organizations, setOrganizations] = useState([]);
+  const getOrganizations = useInitialState(
+    `${process.env.URL_API}organization/?id_user=${localStorage.id_user}`,
+    {
+      method: 'GET',
+    }
+  );
 
   const [isOpen, setIsOpen] = useState(false);
 
