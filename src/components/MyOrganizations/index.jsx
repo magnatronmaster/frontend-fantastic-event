@@ -11,30 +11,22 @@ const SubtitleOrganizations = styled.h3`
   text-align: center;
 `;
 
-export const MyOrganizations = () => {
-  const [organizations, setOrganizations] = useState([]);
-  const getOrganizations = useInitialState(
-    `${process.env.URL_API}organization/?id_user=${localStorage.id_user}`,
-    {
-      method: 'GET',
-    }
-  );
-
+export const MyOrganizations = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => setIsOpen(true);
   const handleCloseModal = () => setIsOpen(false);
 
-  if (organizations.length >= 1) {
+  if (data.length >= 1) {
     return (
       <>
         <SubtitleOrganizations>Mis organizaciones</SubtitleOrganizations>
         <ContainerCards columns={2}>
-          {organizations.map((item) => {
+          {data.map((item) => {
             return (
               <CardButton
-                name={item.name}
-                key={item.id}
+                name={item.name_org}
+                key={item.id_org}
                 text="Ver organización"
                 href="Acá va el link del button"
               />
