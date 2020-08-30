@@ -15,7 +15,7 @@ import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
  
-import {Plantilla} from '../components/plantilla2/App'
+import {Plantilla} from '../components/template2/App'
 
 const App = () => (
   <BrowserRouter>
