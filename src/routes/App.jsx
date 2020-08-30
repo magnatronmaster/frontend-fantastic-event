@@ -28,13 +28,21 @@ const App = () => {
       return <Redirect to="/login" {...restElements} />;
     }
   }
+
+  const UserLogged = ({ component, path, ...restElements }) => {
+    if (token && username) {
+      return <Redirect to="/dashboard" {...restElements} />;
+    } else {
+      return <Route path={path} component={component} {...restElements} />;
+    }
+  };
   return (
     <BrowserRouter>
       <GlobalStyles />
       <Switch>
-        {!token && <Route exact path="/login" component={Login} />}
-        {!token && <Route exact path="/register" component={Register} />}
-        {!token && <Route exact path="/" component={Home} />}
+        <UserLogged exact path="/login" component={Login} />
+        <UserLogged exact path="/register" component={Register} />
+        <UserLogged exact path="/" component={Home} />
         <Layout>
           <SecureRoutes exact path="/dashboard" component={MainDashboard} />
           <SecureRoutes
