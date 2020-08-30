@@ -6,10 +6,13 @@ import { GlobalStyles } from '../assets/GlobalStyles';
 import { Home } from '../pages/Home';
 import { MainDashboard } from '../pages/MainDashboard';
 import { AdminDashboard } from '../pages/AdminDashboard';
-import { AddEvent } from '../pages/AddEvent';
-import { AddSponsors } from '../pages/AddSponsors';
-import { AddConferences } from '../pages/AddConferences';
-import { AddLecturers } from '../pages/AddLecturers';
+import { EditEvent } from '../pages/EditEvent';
+import { Sponsors } from '../pages/Sponsors';
+import { Conferences } from '../pages/Conferences';
+import { Lecturers } from '../pages/Lecturers';
+import { AddConference } from '../pages/AddConference';
+import { AddSponsor } from '../pages/AddSponsor';
+import { AddLecturer } from '../pages/AddLecturer';
 
 import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
@@ -29,13 +32,17 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={MainDashboard} />
         <Route exact path="/adminDashboard" component={AdminDashboard} />
-        <Route exact path="/addEvent" component={AddEvent} />
-        <Route exact path="/addSponsors" component={AddSponsors} />
-        <Route exact path="/addConferences" component={AddConferences} />
-        <Route exact path="/addLecturers" component={AddLecturers} />
+        <Route exact path="/editEvent" component={EditEvent} />
+        <Route exact path="/sponsors" component={Sponsors} />
+        <Route exact path="/conferences" component={Conferences} />
+        <Route exact path="/lecturers" component={Lecturers} />
+        <Route exact path="/addLecturer" component={AddLecturer} />
+        <Route exact path="/addConference" component={AddConference} />
+        <Route exact path="/addSponsor/:type" component={AddSponsor} />
       </Layout>
     </Switch>
   </BrowserRouter>
 );
 
 export default App;
+<AddSponsor />;
