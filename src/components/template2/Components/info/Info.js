@@ -9,7 +9,7 @@ export const InfoEvent = ({nameEvent, eventDescription, imageEvent}) => {
 
     return(
         <section >
-        <Titulo>Info</Titulo>
+        <Titulo>Un evento que no te puedes perder</Titulo>
         <Contenedor>
             <FotoEvento>
                 <img src={imageEvent || IMAGEN_CONGRESO}  alt=""/>

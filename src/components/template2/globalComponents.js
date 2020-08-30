@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 
 import background from './assets/banner-image.png'
 
@@ -15,4 +15,10 @@ export const GlobalStyle = createGlobalStyle `
         overflow-X:hidden;
         
     }
+`
+
+export const LightTemplate = styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
 `

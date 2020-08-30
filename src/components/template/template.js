@@ -122,7 +122,7 @@ export const DarkTemplate = ({nameEvent, direction, dateEvent, imageEvent, logoE
         <ContainerFlexHorizontal>
           {[1, 2, 3, 4].map((conferenceInfo) => {
             return (
-              <Conference
+              <Conference key = {conferenceInfo}
                 time={conferenceInfo.time || TIME}
                 conferenceTitle={conferenceInfo.title || CONFERENCE_TITLE}
                 speaker={conferenceInfo.speaker || SPEAKER_CONFERENCE}
@@ -138,6 +138,7 @@ export const DarkTemplate = ({nameEvent, direction, dateEvent, imageEvent, logoE
           {[1, 2, 3, 4].map((speakerInfo) => {
             return (
               <Speaker
+                key = {speakerInfo}
                 photo={speakerInfo.photo || PHOTO}
                 speaker={speakerInfo.name || SPEAKER}
                 bio={speakerInfo.bio || BIO}
@@ -151,6 +152,7 @@ export const DarkTemplate = ({nameEvent, direction, dateEvent, imageEvent, logoE
           {[1, 2, 3, 4, 5, 6].map((sponsorInfo) => {
             return (
               <Sponsor
+                key= {sponsorInfo}
                 sponsorImage={sponsorInfo.image || SPONSOR_IMAGE}
                 sponsorTitle={sponsorInfo.title || SPONSOR_TITLE}
                 sponsorUrl={sponsorInfo.url || SPONSOR_URL}

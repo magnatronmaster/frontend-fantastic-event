@@ -19,6 +19,7 @@ import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
  
 import {LightTemplate} from '../components/template2/App'
+import {DarkTemplate} from '../components/template/template'
 
 const App = () => {
   const token = localStorage.token_user;

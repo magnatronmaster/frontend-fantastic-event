@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const SponsorLogo = styled.img`
     width: 150px;
 `
@@ -7,7 +8,7 @@ export const SponsorLogo = styled.img`
 export const SponsorContainer = styled.div`
     width: 200px;
     background: black;
-    padding:20px 0;
+    padding:20px;
     margin:20px;
 `
 

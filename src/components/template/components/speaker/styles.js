@@ -4,12 +4,12 @@ export const SpeakerContainer = styled.div`
   width: 300px;
   background: black;
   box-shadow: 2px 4px 4px #0ABCD5;
-  margin:20px;
+  margin:20px;  
 `;
 
 export const SpeakerPhoto = styled.img`
   width: 250px;
-  margin-top: 20px;
+  margin: 20px;
 `;
 
 export const SpeakerName = styled.h3`
@@ -35,5 +35,6 @@ export const SpeakerBio = styled.p`
 export const LogoTwitter = styled.a`
     color: #38E6FE;
     text-decoration:none;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+    margin:50%;
 `

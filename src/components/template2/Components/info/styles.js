@@ -4,6 +4,7 @@ export const Titulo = styled.h2`
   font-size: 64px;
   text-align: center;
   color: #afa76d;
+  margin: 60px;
 
   @media only screen and (max-width: 768px) {
     margin-top: 20px;

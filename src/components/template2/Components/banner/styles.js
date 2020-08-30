@@ -6,13 +6,13 @@ export const Baner = styled.section`
     width: 100%;
     height: 500px;
     background-color: rgba(209, 219, 189, 0.15);
+    text-align:center;
     
     
     @media only screen and (max-width: 425px) {
         height: 300px;
         & h1 {
-            margin-top: 30px;
-            
+            margin-top: 30px;           
             
         }
         
