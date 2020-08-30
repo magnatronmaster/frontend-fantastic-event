@@ -1,5 +1,6 @@
 import React from 'react';
+import { Layout } from 'components/Layout';
 
 export const Home = () => {
-  return <h1>This is the home</h1>;
+  return <Layout>This is the home</Layout>;
 };
