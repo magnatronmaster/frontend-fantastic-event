@@ -30,16 +30,16 @@ export const MyOrganizations = () => {
   const handleOpenModal = () => setIsOpen(true);
   const handleCloseModal = () => setIsOpen(false);
 
-  if (organizations.length >= 1) {
+  if (data.length >= 1) {
     return (
       <>
         <SubtitleOrganizations>Mis organizaciones</SubtitleOrganizations>
         <ContainerCards columns={2}>
-          {organizations.map((item) => {
+          {data.map((item) => {
             return (
               <CardButton
-                name={item.name}
-                key={item.id}
+                name={item.name_org}
+                key={item.id_org}
                 text="Ver organización"
                 href="Acá va el link del button"
               />

@@ -143,6 +143,7 @@ export const AnchorLink = styled(Link)`
 
 // Container cards for This is for the login and register pages
 export const ContainerCards = styled.div`
+  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);
   @media ${device.tablet} {
