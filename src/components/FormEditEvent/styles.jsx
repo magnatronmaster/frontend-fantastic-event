@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from 'assets/breakpoints'
 
 export const EditEventContainer = styled.div``;
 
@@ -15,6 +16,9 @@ export const BasicData = styled.div`
   padding: 6%;
   margin: 0 4%;
   background: lightgray;
+  @media ${device.tablet}{
+   flex-direction:column;
+  }
 `;
 
 export const BasicDataContain = styled.div`

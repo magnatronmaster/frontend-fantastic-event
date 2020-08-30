@@ -18,6 +18,7 @@ import { Layout } from '../components/Layout';
 import { Login } from '../components/Auth/Login';
 import { Register } from '../components/Auth/Register';
 
+
 function SecureRoutes({ component, path, ...restElements }) {
   const token = localStorage.token_user;
   const username = localStorage.id_user;
