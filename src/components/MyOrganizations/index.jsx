@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import useInitialState from 'hooks/useInitialState';
 
 import { ContainerCards, Button } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
