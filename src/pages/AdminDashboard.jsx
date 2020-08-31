@@ -19,7 +19,7 @@ export const AdminDashboard = ({ match }) => {
 
   return (
     <div>
-      <MyEvents data={data} />
+      <MyEvents data={data} id_org={id_org} />
     </div>
   );
 };

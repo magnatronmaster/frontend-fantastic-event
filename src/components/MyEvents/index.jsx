@@ -10,7 +10,7 @@ const SubtitleMyEvents = styled.h3`
   text-align: center;
 `;
 
-export const MyEvents = ({ data }) => {
+export const MyEvents = ({ data, id_org }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpenModal = () => setIsOpenModal(true);
@@ -34,7 +34,11 @@ export const MyEvents = ({ data }) => {
           })}
         </ContainerCards>
         <Button onClick={handleOpenModal}>Crear Evento</Button>
-        <CreateEvent isOpen={isOpenModal} isClose={handleCloseModal} />
+        <CreateEvent
+          id_org={id_org}
+          isOpen={isOpenModal}
+          isClose={handleCloseModal}
+        />
       </>
     );
   } else {
@@ -42,6 +46,11 @@ export const MyEvents = ({ data }) => {
       <>
         <h3>You haven't events</h3>
         <Button onClick={handleOpenModal}>Crear Evento</Button>
+        <CreateEvent
+          id_org={id_org}
+          isOpen={isOpenModal}
+          isClose={handleCloseModal}
+        />
       </>
     );
   }
