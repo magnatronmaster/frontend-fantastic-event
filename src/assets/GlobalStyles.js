@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import {device} from './Breakpoints';
+import { device } from './Breakpoints';
 
 export const GlobalStyles = createGlobalStyle`
     body {
@@ -46,6 +46,9 @@ export const GlobalStyles = createGlobalStyle`
     }
     .swal-icon img {
       max-width:100px;
+    }
+    section {
+      padding: 0 40px;
     }
     `;
 
@@ -95,6 +98,7 @@ export const AnchorButton = styled(Link)`
 export const LoginRegisterContainer = styled.section`
   grid-row: 1/4;
   display: flex;
+  padding: 15px;
 `; // This is for the login and register pages
 
 export const Contain = styled.div`
@@ -102,7 +106,9 @@ export const Contain = styled.div`
   margin: auto;
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  overflow: hidden;
+`;
 
 export const TitleForm = styled.h2`
   width: fit-content;
@@ -143,11 +149,13 @@ export const AnchorLink = styled(Link)`
 
 // Container cards for This is for the login and register pages
 export const ContainerCards = styled.div`
-  margin-top: 60px;
+  margin-top: 30px;
   display: grid;
+  align-items: center;
+  padding: 0 5%;
   grid-template-columns: repeat(${(props) => props.columns || 3}, 1fr);
   @media ${device.tablet} {
-    grid-template-columns: repeat(1, 1fr);    
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 

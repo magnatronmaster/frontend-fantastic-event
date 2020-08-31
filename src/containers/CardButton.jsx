@@ -12,7 +12,7 @@ const ContainerCard = styled.div`
   box-sizing: border-box;
   padding: 20px 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: fit-content;
+  height: 90%;
 
   @media ${device.tablet} {
     margin: 20px 0;
@@ -21,6 +21,8 @@ const ContainerCard = styled.div`
 
 const Name = styled.h3`
   text-align: center;
+  font-weight: bold;
+  font-style: italic;
 `;
 
 export const CardButton = ({ name, href, text }) => {

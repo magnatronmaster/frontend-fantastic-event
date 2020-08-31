@@ -6,6 +6,7 @@ import { CardButton } from 'containers/CardButton';
 
 const SubtitleEvents = styled.h3`
   text-align: center;
+  font-weight: bold;
 `;
 
 export const EventsAsOrganizer = ({ data }) => {
@@ -30,6 +31,10 @@ export const EventsAsOrganizer = ({ data }) => {
       </>
     );
   } else {
-    return <h3>You haven't events</h3>;
+    return (
+      <SubtitleEvents>
+        No has sido invitado a eventos como organizador
+      </SubtitleEvents>
+    );
   }
 };

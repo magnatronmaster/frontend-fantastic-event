@@ -8,6 +8,12 @@ import { CreateOrganization } from 'components/Modals/CreateOrganization';
 
 const SubtitleOrganizations = styled.h3`
   text-align: center;
+  font-weight: bold;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 20px auto;
 `;
 
 export const MyOrganizations = ({ data }) => {
@@ -32,15 +38,15 @@ export const MyOrganizations = ({ data }) => {
             );
           })}
         </ContainerCards>
-        <Button onClick={handleOpenModal}>Crear organización</Button>
+        <Button onClick={handleOpenModal}>¡Crea una organización!</Button>
         <CreateOrganization openModal={isOpen} closeModal={handleCloseModal} />
       </>
     );
   } else {
     return (
       <>
-        <h3>You haven't organizations</h3>
-        <Button onClick={handleOpenModal}>Crear organización</Button>
+        <SubtitleOrganizations>No tienes organizaciones</SubtitleOrganizations>
+        <Button onClick={handleOpenModal}>¡Crea una organización!</Button>
         <CreateOrganization openModal={isOpen} closeModal={handleCloseModal} />
       </>
     );

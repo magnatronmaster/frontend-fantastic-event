@@ -1,16 +1,12 @@
 import React from 'react';
-import { HeaderHomeContainer } from './styles'
+import { HeaderHomeContainer } from './styles';
 
-import {    
-    Button    
-  } from 'assets/GlobalStyles';
-
+import { AnchorButton } from 'assets/GlobalStyles';
 
 export const HeaderHome = () => {
-    return (
-        <HeaderHomeContainer>
-            
-            <Button to="/login"> empieza tu evento </Button>
-        </HeaderHomeContainer>
-    )
-}
+  return (
+    <HeaderHomeContainer>
+      <AnchorButton to="/login">¡Empieza tu evento personalizado!</AnchorButton>
+    </HeaderHomeContainer>
+  );
+};

@@ -18,8 +18,8 @@ export const AdminDashboard = ({ match }) => {
   if (status != 'fetched') return <PageLoading />;
 
   return (
-    <div>
+    <section>
       <MyEvents data={data} id_org={id_org} />
-    </div>
+    </section>
   );
 };

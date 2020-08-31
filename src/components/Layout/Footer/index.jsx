@@ -7,7 +7,7 @@ import {
   FooterText,
   ContainerFlex,
   ContainerColumn,
-  LogoContainerWithText
+  LogoContainerWithText,
 } from './styles';
 
 import WhiteLogo from 'assets/images/logoBlanco.svg';
@@ -17,10 +17,10 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <LogoContainerWithText>
-        <LogoImage src={WhiteLogo} maxWidth="150px" /> 
+        <LogoImage src={WhiteLogo} maxWidth="150px" />
         <FooterText>Organiza eventos inolvidables</FooterText>
       </LogoContainerWithText>
-      
+
       <ContainerFlex>
         {/* <ContainerColumn>
           <h4>Frontend</h4>
@@ -39,9 +39,6 @@ export const Footer = () => {
         </ContainerColumn> */}
         <ContainerColumn>
           <ContainerList>
-            <LogoContainer>
-              <LogoImage src={LogoPlatzi} maxWidth="60px" />
-            </LogoContainer>
             <p>Magnatron 2020</p>
           </ContainerList>
         </ContainerColumn>
