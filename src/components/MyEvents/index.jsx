@@ -29,6 +29,7 @@ export const MyEvents = ({ data, id_org }) => {
                 name={item.name_event}
                 key={item.id_event}
                 text="Ver evento"
+                href={`/editEvent/${item.id_event}`}
               />
             );
           })}

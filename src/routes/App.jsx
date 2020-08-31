@@ -52,7 +52,11 @@ const App = () => {
             path="/:id_org/events"
             component={AdminDashboard}
           />
-          <SecureRoutes exact path="/editEvent" component={EditEvent} />
+          <SecureRoutes
+            exact
+            path="/editEvent/:id_event"
+            component={EditEvent}
+          />
           <SecureRoutes exact path="/sponsors" component={Sponsors} />
           <SecureRoutes exact path="/conferences" component={Conferences} />
           <SecureRoutes exact path="/lecturers" component={Lecturers} />
