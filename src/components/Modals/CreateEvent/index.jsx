@@ -51,6 +51,9 @@ export const CreateEvent = ({ isOpen, isClose, id_org }) => {
         icon: 'success',
         button: false,
       });
+      setTimeout(() => {
+        location.href = `/${id_org}/events`;
+      }, 2000);
     } catch (error) {
       swal({
         title: 'Ha ocurrido un error creando el evento',
