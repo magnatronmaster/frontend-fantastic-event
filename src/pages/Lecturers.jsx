@@ -2,30 +2,27 @@ import React, { useState } from 'react';
 import { ContainerCards, AnchorButton } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
 
-export const Lecturers = () => {
-  const [lecturers, setLecturers] = useState([
-    {
-      id: '1',
-      name: 'Angel Castiblanco',
-    },
-    {
-      id: '2',
-      name: 'Jaime Piratova',
-    },
-    {
-      id: '3',
-      name: 'Luis Lazcano',
-    },
-  ]);
-  if (lecturers.length >= 1) {
+import PageLoading from '../components/Loader/PageLoading';
+
+import useFetch from '../hooks/useFetch';
+
+export const Lecturers = ({ match }) => {
+  const {
+    params: { id_event },
+  } = match;
+  const url = `${process.env.URL_API}speaker/?id_event=${id_event}`;
+  const { status, data } = useFetch(url);
+
+  if (status != 'fetched') return <PageLoading />;
+  if (data.length >= 1) {
     return (
       <>
         <ContainerCards>
-          {lecturers.map((item) => {
+          {data.map((item) => {
             return (
               <CardButton
-                name={item.name}
-                key={item.id}
+                name={item.name_speaker}
+                key={item.id_speaker}
                 text="Editar conferencista"
               />
             );

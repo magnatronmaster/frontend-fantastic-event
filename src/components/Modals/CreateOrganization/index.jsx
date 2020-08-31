@@ -50,7 +50,7 @@ export const CreateOrganization = (props) => {
         button: false,
       });
       setTimeout(() => {
-        location.href = `/${data.data.idOrg}`;
+        location.href = `/${data.data.idOrg}/events`;
       }, 2000);
     } catch (error) {
       swal({

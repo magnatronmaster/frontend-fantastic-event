@@ -2,48 +2,42 @@ import React, { useState } from 'react';
 import { ContainerCards, AnchorButton } from 'assets/GlobalStyles';
 import { CardButton } from 'containers/CardButton';
 
-export const Sponsors = () => {
-  const cualquiera = 'angel';
-  const [sponsors, setSponsors] = useState([
-    {
-      id: '1',
-      name: 'Platzi',
-    },
-    {
-      id: '2',
-      name: 'Platzi Master',
-    },
-    {
-      id: '3',
-      name: 'Nicolas Molina',
-    },
-  ]);
-  if (sponsors.length >= 1) {
+import PageLoading from '../components/Loader/PageLoading';
+
+import useFetch from '../hooks/useFetch';
+
+export const Sponsors = ({ match }) => {
+  const {
+    params: { id_event },
+  } = match;
+
+  const url = `${process.env.URL_API}sponsors/?id_event=${id_event}`;
+  const { status, data } = useFetch(url);
+
+  if (status != 'fetched') return <PageLoading />;
+
+  if (data.length >= 1) {
     return (
       <>
         <ContainerCards>
-          {sponsors.map((item) => {
+          {data.map((item) => {
             return (
               <CardButton
-                name={item.name}
-                key={item.id}
+                name={item.name_sponsor}
+                key={item.id_sponsor}
                 text="Editar Sponsor"
               />
             );
           })}
         </ContainerCards>
-        <AnchorButton to={`/addSponsor/${cualquiera}`}>
-          Añadir sponsor
-        </AnchorButton>
+        <AnchorButton to={`/addSponsor/`}>Añadir sponsor</AnchorButton>
       </>
     );
   } else {
     return (
       <>
         <h3>You haven't events</h3>
-        <AnchorButton to={`/addSponsor/${cualquiera}`}>
-          Añadir sponsor
-        </AnchorButton>
+        <AnchorButton to={`/addSponsor/`}>Añadir sponsor</AnchorButton>
       </>
     );
   }
