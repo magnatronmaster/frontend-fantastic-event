@@ -10,35 +10,26 @@ const SubtitleMyEvents = styled.h3`
   text-align: center;
 `;
 
-export const MyEvents = () => {
-  const [myEvents, setMyEvents] = useState([
-    {
-      id: '1',
-      name: 'magnatron MyEvent',
-    },
-    {
-      id: '2',
-      name: 'Platzi Master MyEvent',
-    },
-    {
-      id: '3',
-      name: 'Cohort 3 MyEvent',
-    },
-  ]);
-
+export const MyEvents = ({ data }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpenModal = () => setIsOpenModal(true);
   const handleCloseModal = () => setIsOpenModal(false);
 
-  if (myEvents.length >= 1) {
+  if (data.length >= 1) {
     return (
       <>
-        <SubtitleMyEvents>Eventos de mi organización</SubtitleMyEvents>
+        <SubtitleMyEvents>
+          Eventos de {data[0].Organization.name_org}
+        </SubtitleMyEvents>
         <ContainerCards>
-          {myEvents.map((item) => {
+          {data.map((item) => {
             return (
-              <CardButton name={item.name} key={item.id} text="Ver evento" />
+              <CardButton
+                name={item.name_event}
+                key={item.id_event}
+                text="Ver evento"
+              />
             );
           })}
         </ContainerCards>
