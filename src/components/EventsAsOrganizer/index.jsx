@@ -22,6 +22,7 @@ export const EventsAsOrganizer = ({ data }) => {
                 name={item.name_event}
                 key={item.id_event}
                 text="Ver evento"
+                href={`/editEvent/${item.id_event}`}
               />
             );
           })}

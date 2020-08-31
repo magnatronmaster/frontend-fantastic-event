@@ -27,7 +27,7 @@ export const MyOrganizations = ({ data }) => {
                 name={item.name_org}
                 key={item.id_org}
                 text="Ver organización"
-                href="Acá va el link del button"
+                href={`${item.id_org}/events`}
               />
             );
           })}
