@@ -18,7 +18,7 @@ export const FormEditEvent = ({ data }) => {
     day: 'numeric',
   };
   const date = new Date(data.date_end_event);
-
+  console.log(data);
   return (
     <>
       <EditEventContainer>
@@ -35,13 +35,13 @@ export const FormEditEvent = ({ data }) => {
             <img src={TemplateImage} />
           </TemplateImageContainer>
         </BasicData>
-        <AnchorButton width="40%" to="/lecturers">
+        <AnchorButton width="40%" to={`/${data.id_event}/speakers`}>
           Conferencistas
         </AnchorButton>
-        <AnchorButton width="40%" to="/conferences">
+        <AnchorButton width="40%" to={`/${data.id_event}/scheduls`}>
           Agenda
         </AnchorButton>
-        <AnchorButton width="40%" to="/sponsors">
+        <AnchorButton width="40%" to={`/${data.id_event}/sponsors`}>
           Asociados
         </AnchorButton>
         <Button>Publicar Evento</Button>
