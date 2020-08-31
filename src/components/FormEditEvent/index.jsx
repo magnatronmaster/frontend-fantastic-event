@@ -10,22 +10,25 @@ import {
 } from './styles';
 
 import TemplateImage from 'assets/images/plantilla.png';
-export const FormEditEvent = () => {
+export const FormEditEvent = ({ data }) => {
+  const option = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const date = new Date(data.date_end_event);
+
   return (
     <>
       <EditEventContainer>
         <BasicData>
           <BasicDataContain>
-            <h3>Titulo del evento</h3>
+            <h3>{data.name_event}</h3>
             <h4>Descripción del evento</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum
-              quam reprehenderit est odit rem. Totam tenetur, sint ullam
-              corporis cupiditate eius quae recusandae excepturi magni deleniti,
-              magnam similique tempore.
-            </p>
+            <p>{data.description_event}</p>
             <h4>Fecha</h4>
-            <p>15 de diciembre del 2020</p>
+            <p>{date.toLocaleDateString('es-ES', option)}</p>
             <Button>Editar evento</Button>
           </BasicDataContain>
           <TemplateImageContainer>
