@@ -7,38 +7,40 @@ import {
   FooterText,
   ContainerFlex,
   ContainerColumn,
+  LogoContainerWithText
 } from './styles';
 
 import WhiteLogo from 'assets/images/logoBlanco.svg';
-import LogoPlatzi from 'assets/images/Platzi.png';
+import LogoPlatzi from 'assets/images/PlatziMaster.png';
 
 export const Footer = () => {
   return (
     <FooterContainer>
-      <LogoContainer>
-        <LogoImage src={WhiteLogo} maxWidth="150px" />
-      </LogoContainer>
-      <FooterText>Organiza eventos inolvidables</FooterText>
+      <LogoContainerWithText>
+        <LogoImage src={WhiteLogo} maxWidth="150px" /> 
+        <FooterText>Organiza eventos inolvidables</FooterText>
+      </LogoContainerWithText>
+      
       <ContainerFlex>
-        <ContainerColumn>
+        {/* <ContainerColumn>
           <h4>Frontend</h4>
           <ContainerList>
             <li>Angel Castiblanco</li>
             <li>Nelson Alayon</li>
             <li>Jaime Piratova</li>
           </ContainerList>
-        </ContainerColumn>
-        <ContainerColumn>
+        </ContainerColumn> */}
+        {/* <ContainerColumn>
           <h4>Backend</h4>
           <ContainerList>
             <li>Luis Lazcano</li>
             <li>Julian Builes</li>
           </ContainerList>
-        </ContainerColumn>
+        </ContainerColumn> */}
         <ContainerColumn>
           <ContainerList>
             <LogoContainer>
-              <LogoImage src={LogoPlatzi} maxWidth="100px" />
+              <LogoImage src={LogoPlatzi} maxWidth="60px" />
             </LogoContainer>
             <p>Magnatron 2020</p>
           </ContainerList>
