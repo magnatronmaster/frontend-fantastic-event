@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
   MenuContainer,
@@ -45,7 +45,9 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <figure>
-        <LogoImage src={Logo} />
+        <Link to="/">
+          <LogoImage src={Logo} />
+        </Link>
       </figure>
       <MenuContainer>
         <HeaderMenuList>{session()}</HeaderMenuList>

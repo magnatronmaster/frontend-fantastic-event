@@ -8,6 +8,12 @@ import { CreateEvent } from 'components/Modals/CreateEvent';
 
 const SubtitleMyEvents = styled.h3`
   text-align: center;
+  font-weight: bold;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 20px auto;
 `;
 
 export const MyEvents = ({ data, id_org }) => {
@@ -45,7 +51,7 @@ export const MyEvents = ({ data, id_org }) => {
   } else {
     return (
       <>
-        <h3>You haven't events</h3>
+        <SubtitleMyEvents>No tienes eventos creados</SubtitleMyEvents>
         <Button onClick={handleOpenModal}>Crear Evento</Button>
         <CreateEvent
           id_org={id_org}
